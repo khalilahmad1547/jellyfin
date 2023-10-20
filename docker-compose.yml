@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    user: 1000:1000
+    network_mode: "bridge"
+    ports:
+      - 8096:8096
+    volumes:
+      - /home/hp/Projects/Personal/jellyfin/configs:/config
+      - /home/hp/Projects/Personal/jellyfin/cache:/cache
+      - /home/hp/Projects/Personal/jellyfin/media:/media
+    restart: "unless-stopped"
